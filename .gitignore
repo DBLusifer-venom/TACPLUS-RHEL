@@ -1,0 +1,17 @@
+# Build artifacts
+tacacs-build/
+*.rpm
+
+# Documentation build files
+build_mop_pdf.py
+tacacs_implementation.html
+tacacs_implementation.pdf
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+*.swp
+*~

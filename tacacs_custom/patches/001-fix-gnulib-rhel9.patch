@@ -1,0 +1,23 @@
+From: Security Engineering <security-engineering@company.local>
+Subject: [PATCH] Remove obsolete gl_PREREQ_EXPLICIT_BZERO for RHEL 9 compatibility
+
+The gnulib macro gl_PREREQ_EXPLICIT_BZERO is not recognized by RHEL 9's
+packaged autotools, causing autoreconf to fail. This macro is obsolete
+and not required for pam_tacplus v1.7.0.
+
+Remove the single offending line from configure.ac.
+
+---
+ configure.ac | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/configure.ac b/configure.ac
+--- a/configure.ac
++++ b/configure.ac
+@@ -XX,7 +XX,6 @@
+ AC_CONFIG_MACRO_DIR([m4])
+ AC_CONFIG_HEADERS([config.h])
+- gl_PREREQ_EXPLICIT_BZERO
+ AM_INIT_AUTOMAKE([1.11 foreign no-dist-gzip dist-bzip2])
+--
+2.39.0
